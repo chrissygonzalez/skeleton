@@ -1,0 +1,102 @@
+:root {
+  --main-bg-color: #4b49b4;
+  --main-text-color: #ccff00;
+  --soft-bg-color: #ffb0b1;
+  --soft-text-color: #c70f18;
+}
+
+body,
+header,
+h1,
+p,
+input {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "Marcellus", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+h1 {
+  display: inline-block;
+  padding: 0.5rem;
+  font-size: 2.3rem;
+  margin-bottom: 5px;
+  border-top: 5px solid var(--main-text-color);
+  color: var(--main-text-color);
+  width: 50%;
+}
+
+h2 {
+  padding: 0.5rem;
+  font-size: 2.3rem;
+  margin-bottom: 5px;
+  color: var(--main-text-color);
+}
+
+.content {
+  padding-top: 5rem;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  height: 100vh;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease-out;
+}
+
+.edit-button {
+  width: 4rem;
+  border-radius: 0 45% 45% 0;
+  border: none;
+  font-size: 3rem;
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  position: absolute;
+  left: 0;
+  bottom: 10rem;
+  padding: 0 0 5px 0;
+  transition: all 0.5s ease-out;
+}
+
+.edit-button.editing {
+  /* left: 75px; */
+}
+
+div.show-edit {
+  left: 0;
+}
+
+.squish {
+  left: 75px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: var(--main-bg-color);
+}
+
+.edit-menu {
+  width: 75px;
+  background-color: #969595;
+  height: 100vh;
+  position: fixed;
+  left: -75px;
+  transition: all 0.5s ease-out;
+  box-shadow: inset -7px 0 9px -7px rgba(0, 0, 0, 0.4);
+}
