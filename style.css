@@ -83,6 +83,25 @@ main {
   transition: all 0.25s ease-out;
 }
 
+.button {
+  background-color: #ffffff55;
+  border: none;
+  border-radius: 8px;
+}
+
+.invert-button {
+  font-size: 24px;
+  padding: 0 12px;
+  height: 25px;
+  line-height: 18px;
+  color: #fff;
+}
+
+.text-button {
+  padding: 8px 10px;
+  margin: 5px;
+}
+
 .edit-menu {
   width: 75px;
   background-color: #4f390ba6;
@@ -99,14 +118,14 @@ div.show-edit {
 
 .edit-section {
   padding: 1rem 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ffffff55;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .edit-label {
-  color: #fff;
+  color: #ffffff95;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.7rem;
@@ -124,18 +143,23 @@ div.show-edit {
 
 .color-theme {
   display: flex;
-  border: 2px solid #fff;
   margin: 0.5rem 0;
 }
 
 .color-theme-left,
 .color-theme-right {
-  width: 24px;
+  width: 20px;
   height: 20px;
+  border: 2px solid #fff;
 }
 
 .color-theme-left {
-  border-right: 2px solid #fff;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.color-theme-right {
+  border-radius: 0 8px 8px 0;
 }
 
 input[type="color"] {
