@@ -7,12 +7,14 @@
 body,
 header,
 h1,
+h2,
 p,
 input {
   margin: 0;
   padding: 0;
   font-weight: normal;
   box-sizing: border-box;
+  transition: all 0.25s ease-out;
 }
 
 body {
@@ -23,7 +25,7 @@ body {
 h1,
 h2 {
   padding: 0.5rem;
-  margin-bottom: 5px;
+  margin-bottom: 2rem;
   color: var(--main-text-color);
   font-family: var(--font-family);
 }
@@ -60,7 +62,7 @@ main {
   width: 100%;
   position: relative;
   left: 0;
-  transition: left 0.5s ease-out;
+  transition: left 0.25s ease-out;
 }
 
 .content-show-edit {
@@ -78,7 +80,7 @@ main {
   left: 0;
   bottom: 10rem;
   padding: 0 0 5px 0;
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .edit-menu {
@@ -88,7 +90,7 @@ main {
   position: fixed;
   left: -75px;
   text-align: center;
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 div.show-edit {
@@ -121,16 +123,19 @@ div.show-edit {
 }
 
 .color-theme {
-  height: 20px;
-  width: 50px;
+  display: flex;
   border: 2px solid #fff;
   margin: 0.5rem 0;
 }
 
-.color-theme-left {
-  border-right: 2px solid #fff;
+.color-theme-left,
+.color-theme-right {
   width: 24px;
   height: 20px;
+}
+
+.color-theme-left {
+  border-right: 2px solid #fff;
 }
 
 input[type="color"] {
