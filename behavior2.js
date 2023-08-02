@@ -1,5 +1,5 @@
 // color constants
-const pink = "#ffcfd5";
+const pink = "#ffbac2";
 const red = "#de1447";
 const black = "#000000";
 const white = "#ffffff";
@@ -12,16 +12,19 @@ const backgrounds = [pink, black, blue];
 const [body] = document.getElementsByTagName("body");
 const [h1] = document.getElementsByTagName("h1");
 const [h2] = document.getElementsByTagName("h2");
+// TODO: remove this main if not needed anymore
 const [main] = document.getElementsByTagName("main");
-const [content] = document.getElementsByClassName("content");
+// TODO: rename content and its classes to main
+const [content] = document.getElementsByTagName("main");
 const editMenu = document.getElementById("edit-menu");
 const foregroundPicker = document.getElementById("foreground");
 const backgroundPicker = document.getElementById("background");
-const [invertButton, serifButton, chiseledButton, wideButton, editButton] =
+const [invertButton, serifButton, cursiveButton, sansButton, editButton] =
   document.getElementsByTagName("button");
 const [theme1, theme2, theme3] = document.getElementsByClassName("color-theme");
 const foregroundItems = [h1, h2, editButton];
 const backgroundItems = [body, main, editButton];
+const headlines = [h1, h2];
 
 // draw the little theme things
 [...document.getElementsByClassName("color-theme-left")].forEach(
@@ -98,30 +101,48 @@ function pickBackground() {
 }
 
 // functions to do things with fonts
-const changeFont = (font) => {
-  h1.style.setProperty("--font-family", font);
-  h2.style.setProperty("--font-family", font);
+const fonts = {
+  sans: {
+    font: "Unbounded, cursive",
+    size: "2.3rem",
+  },
+  serif: {
+    font: "Caprasimo, sans-serif",
+    size: "2.5rem",
+  },
+  cursive: {
+    font: "Bellota, sans-serif",
+    size: "2.4rem",
+  },
+};
+
+const changeFont = (style) => {
+  headlines.forEach((item) => {
+    item.style.setProperty("--font-family", fonts[style].font);
+    item.style.setProperty("font-size", fonts[style].size);
+  });
 };
 
 // register event listeners
 editButton.addEventListener("click", () => {
   toggleEditing();
 });
-theme1.addEventListener("click", () =>
-  setColors({ foreground: red, background: pink })
-);
-theme2.addEventListener("click", () =>
-  setColors({ foreground: white, background: black })
-);
-theme3.addEventListener("click", () =>
-  setColors({ foreground: lime, background: blue })
-);
+theme1.addEventListener("click", () => {
+  setColors({ foreground: red, background: pink });
+  changeFont("cursive");
+});
+theme2.addEventListener("click", () => {
+  setColors({ foreground: white, background: black });
+  changeFont("serif");
+});
+theme3.addEventListener("click", () => {
+  setColors({ foreground: lime, background: blue });
+  changeFont("sans");
+});
 invertButton.addEventListener("click", invertColors);
-serifButton.addEventListener("click", () => changeFont("Caprasimo, cursive"));
-chiseledButton.addEventListener("click", () =>
-  changeFont("Bellota, sans-serif")
-);
-wideButton.addEventListener("click", () => changeFont("Unbounded, cursive"));
+sansButton.addEventListener("click", () => changeFont("sans"));
+serifButton.addEventListener("click", () => changeFont("serif"));
+cursiveButton.addEventListener("click", () => changeFont("cursive"));
 foregroundPicker.addEventListener("input", pickForeground);
 backgroundPicker.addEventListener("input", pickBackground);
 

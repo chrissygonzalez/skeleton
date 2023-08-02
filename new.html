@@ -7,100 +7,118 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Caprasimo&family=Marcellus&family=Merriweather:wght@300&family=Unbounded:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Caprasimo&family=Merriweather:wght@300&family=Unbounded:wght@300&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- <main> -->
+    <div id="edit-menu" class="edit-menu">
+      <div class="edit-section">
+        <p class="edit-label">Theme</p>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
+        </div>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
+        </div>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
+        </div>
+      </div>
+      <div class="edit-section">
+        <p class="edit-label">Picker</p>
+        <input
+          type="color"
+          id="background"
+          name="background"
+          value="#f6b73c"
+          class="background"
+        />
+        <input
+          type="color"
+          id="foreground"
+          name="foreground"
+          value="#cc7733"
+          class="foreground"
+        />
+        <button class="button invert-button">&harr;</button>
+      </div>
+      <div class="edit-section">
+        <p class="edit-label">Text</p>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="23"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M4.832 23v-1.696l3.648-.736-.608.864V2.456L8.576 3H2.72l.768-.672-.736 4.064H.8V.6h17.408v5.792h-1.952l-.704-3.936.736.544h-5.856l.704-.544v18.976l-.576-.864 3.616.736V23H4.832Z"
+            />
+          </svg>
+        </button>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="28"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M14.012 23.09c0 .753-.05 1.395-.15 1.927-.088.53-.216.963-.382 1.294-.165.333-.37.576-.614.731a1.349 1.349 0 0 1-.764.232c-.21 0-.442-.072-.697-.215a4.085 4.085 0 0 1-.73-.532 4.295 4.295 0 0 1-.565-.647c-.144-.221-.215-.415-.215-.581 0-.11.01-.183.033-.216a.205.205 0 0 1 .116-.033c.055.01.116.027.183.05.077.022.16.033.249.033.31 0 .53-.194.664-.581.143-.399.215-1.03.215-1.893V3.883a15.192 15.192 0 0 0-3.038.564A7.655 7.655 0 0 0 5.744 5.71c-.741.564-1.334 1.3-1.776 2.208-.443.896-.664 2.003-.664 3.32 0 .587.055 1.118.166 1.594.121.465.276.886.465 1.262.188.376.392.708.614.996a9.7 9.7 0 0 0 .68.763c.189-.055.321-.033.399.067.077.1.116.238.116.415 0 .221-.05.454-.15.697-.088.233-.21.449-.365.648a2.437 2.437 0 0 1-.53.481 1.057 1.057 0 0 1-.582.183c-.088 0-.177-.011-.265-.033a.677.677 0 0 1-.25-.15c-.243-.177-.536-.465-.88-.863a8.294 8.294 0 0 1-.979-1.51 11.218 11.218 0 0 1-.797-2.043 9.09 9.09 0 0 1-.332-2.507c0-1.638.305-3.082.913-4.333a8.774 8.774 0 0 1 2.54-3.137C5.152 2.914 6.436 2.272 7.92 1.84c1.494-.432 3.127-.648 4.897-.648.41 0 .902.006 1.478.017.586 0 1.168.005 1.743.017.576.01 1.09.022 1.544.033h.946c.144 0 .26-.011.349-.033.1-.034.177-.067.232-.1.067-.033.117-.06.15-.083.033-.033.06-.05.083-.05.055 0 .105.039.15.116.055.067.099.155.132.266.044.1.078.216.1.349a2.423 2.423 0 0 1-.05 1.029c-.055.21-.138.404-.25.581-.11.166-.248.304-.414.415-.166.11-.36.166-.581.166h-.68c-.322-.011-.693-.022-1.113-.033l-1.328-.033c-.465-.011-.897-.023-1.295-.034v19.275Z"
+            />
+          </svg>
+        </button>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="23"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M7.71 23V3.41H.84V.71h17.265v2.7H11.25V23H7.71Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
     <main>
-      <div id="edit-menu" class="edit-menu">
-        <div class="edit-section">
-          <p class="edit-label">Theme</p>
-          <div class="color-theme">
-            <div class="color-theme-left"></div>
-            <div class="color-theme-right"></div>
-          </div>
-          <div class="color-theme">
-            <div class="color-theme-left"></div>
-            <div class="color-theme-right"></div>
-          </div>
-          <div class="color-theme">
-            <div class="color-theme-left"></div>
-            <div class="color-theme-right"></div>
-          </div>
+      <hgroup class="container">
+        <h1 id="head">Chrissy Gonzalez</h1>
+        <h2 id="tagline">
+          Frontend engineer,<br />
+          based in Brooklyn NY
+        </h2>
+      </hgroup>
+      <div class="work">
+        <div class="work-type">
+          <h3>Code</h3>
+          <ul>
+            <li>Project 1</li>
+            <li>Project 2</li>
+            <li>Project 3</li>
+          </ul>
         </div>
-        <div class="edit-section">
-          <p class="edit-label">Picker</p>
-          <input
-            type="color"
-            id="background"
-            name="background"
-            value="#f6b73c"
-            class="background"
-          />
-          <input
-            type="color"
-            id="foreground"
-            name="foreground"
-            value="#cc7733"
-            class="foreground"
-          />
-          <button class="button invert-button">&harr;</button>
-        </div>
-        <div class="edit-section">
-          <p class="edit-label">Text</p>
-          <button class="button text-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="19"
-              height="23"
-              fill="none"
-            >
-              <path
-                fill="#fff"
-                d="M4.832 23v-1.696l3.648-.736-.608.864V2.456L8.576 3H2.72l.768-.672-.736 4.064H.8V.6h17.408v5.792h-1.952l-.704-3.936.736.544h-5.856l.704-.544v18.976l-.576-.864 3.616.736V23H4.832Z"
-              />
-            </svg>
-          </button>
-          <button class="button text-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="28"
-              fill="none"
-            >
-              <path
-                fill="#fff"
-                d="M14.012 23.09c0 .753-.05 1.395-.15 1.927-.088.53-.216.963-.382 1.294-.165.333-.37.576-.614.731a1.349 1.349 0 0 1-.764.232c-.21 0-.442-.072-.697-.215a4.085 4.085 0 0 1-.73-.532 4.295 4.295 0 0 1-.565-.647c-.144-.221-.215-.415-.215-.581 0-.11.01-.183.033-.216a.205.205 0 0 1 .116-.033c.055.01.116.027.183.05.077.022.16.033.249.033.31 0 .53-.194.664-.581.143-.399.215-1.03.215-1.893V3.883a15.192 15.192 0 0 0-3.038.564A7.655 7.655 0 0 0 5.744 5.71c-.741.564-1.334 1.3-1.776 2.208-.443.896-.664 2.003-.664 3.32 0 .587.055 1.118.166 1.594.121.465.276.886.465 1.262.188.376.392.708.614.996a9.7 9.7 0 0 0 .68.763c.189-.055.321-.033.399.067.077.1.116.238.116.415 0 .221-.05.454-.15.697-.088.233-.21.449-.365.648a2.437 2.437 0 0 1-.53.481 1.057 1.057 0 0 1-.582.183c-.088 0-.177-.011-.265-.033a.677.677 0 0 1-.25-.15c-.243-.177-.536-.465-.88-.863a8.294 8.294 0 0 1-.979-1.51 11.218 11.218 0 0 1-.797-2.043 9.09 9.09 0 0 1-.332-2.507c0-1.638.305-3.082.913-4.333a8.774 8.774 0 0 1 2.54-3.137C5.152 2.914 6.436 2.272 7.92 1.84c1.494-.432 3.127-.648 4.897-.648.41 0 .902.006 1.478.017.586 0 1.168.005 1.743.017.576.01 1.09.022 1.544.033h.946c.144 0 .26-.011.349-.033.1-.034.177-.067.232-.1.067-.033.117-.06.15-.083.033-.033.06-.05.083-.05.055 0 .105.039.15.116.055.067.099.155.132.266.044.1.078.216.1.349a2.423 2.423 0 0 1-.05 1.029c-.055.21-.138.404-.25.581-.11.166-.248.304-.414.415-.166.11-.36.166-.581.166h-.68c-.322-.011-.693-.022-1.113-.033l-1.328-.033c-.465-.011-.897-.023-1.295-.034v19.275Z"
-              />
-            </svg>
-          </button>
-          <button class="button text-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="19"
-              height="23"
-              fill="none"
-            >
-              <path
-                fill="#fff"
-                d="M7.71 23V3.41H.84V.71h17.265v2.7H11.25V23H7.71Z"
-              />
-            </svg>
-          </button>
+        <div class="work-type">
+          <h3>Design</h3>
+          <ul>
+            <li>Project 1</li>
+            <li>Project 2</li>
+            <li>Project 3</li>
+          </ul>
         </div>
       </div>
-      <div class="content">
-        <div class="container">
-          <h1 id="head">Chrissy Gonzalez</h1>
-          <h2 id="tagline">
-            Frontend engineer,<br />
-            based in Brooklyn NY
-          </h2>
-          <button class="edit-button">&rarr;</button>
-        </div>
-      </div>
+      <button class="edit-button">&rarr;</button>
     </main>
+    <!-- </main> -->
   </body>
   <script src="behavior2.js"></script>
 </html>
