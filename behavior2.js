@@ -10,21 +10,20 @@ const backgrounds = [pink, black, blue];
 
 // get all the elements
 const [body] = document.getElementsByTagName("body");
-const [h1] = document.getElementsByTagName("h1");
-const [h2] = document.getElementsByTagName("h2");
-// TODO: remove this main if not needed anymore
+const [headers] = document.getElementsByTagName("hgroup");
+const [codeHeading, designHeading] = document.getElementsByTagName("h3");
 const [main] = document.getElementsByTagName("main");
-// TODO: rename content and its classes to main
-const [content] = document.getElementsByTagName("main");
 const editMenu = document.getElementById("edit-menu");
+const [code, design] = document.getElementsByClassName("work-type");
 const foregroundPicker = document.getElementById("foreground");
 const backgroundPicker = document.getElementById("background");
 const [invertButton, serifButton, cursiveButton, sansButton, editButton] =
   document.getElementsByTagName("button");
 const [theme1, theme2, theme3] = document.getElementsByClassName("color-theme");
-const foregroundItems = [h1, h2, editButton];
+const foregroundItems = [headers, editButton, code, design];
 const backgroundItems = [body, main, editButton];
-const headlines = [h1, h2];
+const headlines = [headers];
+const subheads = [codeHeading, designHeading];
 
 // draw the little theme things
 [...document.getElementsByClassName("color-theme-left")].forEach(
@@ -51,12 +50,12 @@ const toggleEditing = () => {
 
 const displayCurrentEditState = () => {
   if (pageState.showEdit) {
-    content.classList.add("content-show-edit");
+    main.classList.add("main-show-edit");
     editMenu.classList.add("show-edit");
     editButton.classList.add("editing");
     editButton.innerHTML = "&larr;";
   } else {
-    content.classList.remove("content-show-edit");
+    main.classList.remove("main-show-edit");
     editMenu.classList.remove("show-edit");
     editButton.classList.remove("editing");
     editButton.innerHTML = "&rarr;";
@@ -74,14 +73,18 @@ const setColors = ({
 };
 
 const changeColors = () => {
-  foregroundItems.forEach((item) =>
-    item.style.setProperty("--main-text-color", pageState.foregroundColor)
-  );
+  foregroundItems.forEach((item) => {
+    item.style.setProperty("--main-text-color", pageState.foregroundColor);
+  });
   backgroundItems.forEach((item) =>
     item.style.setProperty("--main-bg-color", pageState.backgroundColor)
   );
   foregroundPicker.value = pageState.foregroundColor;
   backgroundPicker.value = pageState.backgroundColor;
+  document.documentElement.style.setProperty(
+    "--main-text-color",
+    pageState.foregroundColor
+  );
 };
 
 const invertColors = () => {
@@ -105,14 +108,17 @@ const fonts = {
   sans: {
     font: "Unbounded, cursive",
     size: "2.3rem",
+    subSize: "1rem",
   },
   serif: {
     font: "Caprasimo, sans-serif",
     size: "2.5rem",
+    subSize: "1.2rem",
   },
   cursive: {
     font: "Bellota, sans-serif",
     size: "2.4rem",
+    subSize: "1.1rem",
   },
 };
 
@@ -120,6 +126,10 @@ const changeFont = (style) => {
   headlines.forEach((item) => {
     item.style.setProperty("--font-family", fonts[style].font);
     item.style.setProperty("font-size", fonts[style].size);
+  });
+  subheads.forEach((item) => {
+    item.style.setProperty("--font-family", fonts[style].font);
+    item.style.setProperty("font-size", fonts[style].subSize);
   });
 };
 
