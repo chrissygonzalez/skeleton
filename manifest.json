@@ -1,0 +1,13 @@
+{
+  "name": "Chrissy Gonzalez",
+  "short_name": "Chrissy Gonzalez",
+  "icons": [
+    {
+      "src": "images/google-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "fullscreen"
+}
