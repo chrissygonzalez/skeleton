@@ -1,26 +1,440 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link id="favicon" rel="icon" href="images/favicon.svg" />
+    <!-- <link rel="icon" href="images/favicon.svg" /> -->
+    <link rel=”mask-icon” href=”images/mask-icon.svg” color="#000000">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Caprasimo&family=Merriweather:wght@300;400&family=Unbounded:wght@300&display=swap"
       rel="stylesheet"
     />
+    <title>Chrissy Gonzalez</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1 id="head"></h1>
-        <p id="tagline"></p>
-        <div class="buttons">
-          <button>Edit</button>
-          <button>Save</button>
-          <button>Cancel</button>
+    <dialog>
+      <button>Close</button>
+      <h2 class="dialog-head">Title</h2>
+      <figure>
+        <img src="images/etsy_vetting-before.png" alt="Etsy vetting" />
+        <figcaption>Etsy vetting before</figcaption>
+      </figure>
+    </dialog>
+    <div id="edit-menu" class="edit-menu">
+      <div class="edit-section">
+        <p class="edit-label">Theme</p>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
+        </div>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
+        </div>
+        <div class="color-theme">
+          <div class="color-theme-left"></div>
+          <div class="color-theme-right"></div>
         </div>
       </div>
-    </header>
+      <div class="edit-section">
+        <p class="edit-label">Picker</p>
+        <input
+          type="color"
+          id="background"
+          name="background"
+          value="#f6b73c"
+          class="background"
+        />
+        <input
+          type="color"
+          id="foreground"
+          name="foreground"
+          value="#cc7733"
+          class="foreground"
+        />
+        <button class="button invert-button">&harr;</button>
+      </div>
+      <div class="edit-section">
+        <p class="edit-label">Text</p>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="23"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M4.832 23v-1.696l3.648-.736-.608.864V2.456L8.576 3H2.72l.768-.672-.736 4.064H.8V.6h17.408v5.792h-1.952l-.704-3.936.736.544h-5.856l.704-.544v18.976l-.576-.864 3.616.736V23H4.832Z"
+            />
+          </svg>
+        </button>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="28"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M14.012 23.09c0 .753-.05 1.395-.15 1.927-.088.53-.216.963-.382 1.294-.165.333-.37.576-.614.731a1.349 1.349 0 0 1-.764.232c-.21 0-.442-.072-.697-.215a4.085 4.085 0 0 1-.73-.532 4.295 4.295 0 0 1-.565-.647c-.144-.221-.215-.415-.215-.581 0-.11.01-.183.033-.216a.205.205 0 0 1 .116-.033c.055.01.116.027.183.05.077.022.16.033.249.033.31 0 .53-.194.664-.581.143-.399.215-1.03.215-1.893V3.883a15.192 15.192 0 0 0-3.038.564A7.655 7.655 0 0 0 5.744 5.71c-.741.564-1.334 1.3-1.776 2.208-.443.896-.664 2.003-.664 3.32 0 .587.055 1.118.166 1.594.121.465.276.886.465 1.262.188.376.392.708.614.996a9.7 9.7 0 0 0 .68.763c.189-.055.321-.033.399.067.077.1.116.238.116.415 0 .221-.05.454-.15.697-.088.233-.21.449-.365.648a2.437 2.437 0 0 1-.53.481 1.057 1.057 0 0 1-.582.183c-.088 0-.177-.011-.265-.033a.677.677 0 0 1-.25-.15c-.243-.177-.536-.465-.88-.863a8.294 8.294 0 0 1-.979-1.51 11.218 11.218 0 0 1-.797-2.043 9.09 9.09 0 0 1-.332-2.507c0-1.638.305-3.082.913-4.333a8.774 8.774 0 0 1 2.54-3.137C5.152 2.914 6.436 2.272 7.92 1.84c1.494-.432 3.127-.648 4.897-.648.41 0 .902.006 1.478.017.586 0 1.168.005 1.743.017.576.01 1.09.022 1.544.033h.946c.144 0 .26-.011.349-.033.1-.034.177-.067.232-.1.067-.033.117-.06.15-.083.033-.033.06-.05.083-.05.055 0 .105.039.15.116.055.067.099.155.132.266.044.1.078.216.1.349a2.423 2.423 0 0 1-.05 1.029c-.055.21-.138.404-.25.581-.11.166-.248.304-.414.415-.166.11-.36.166-.581.166h-.68c-.322-.011-.693-.022-1.113-.033l-1.328-.033c-.465-.011-.897-.023-1.295-.034v19.275Z"
+            />
+          </svg>
+        </button>
+        <button class="button text-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="23"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M7.71 23V3.41H.84V.71h17.265v2.7H11.25V23H7.71Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main>
+      <hgroup>
+        <h1 id="head">Chrissy Gonzalez</h1>
+        <h2 id="tagline">
+          Frontend engineer,<br />
+          based in Brooklyn NY
+        </h2>
+      </hgroup>
+      <section class="work-list">
+        <div class="work-type">
+          <h3>Code</h3>
+          <p>
+            Currently, I'm a frontend engineer at
+            <a href="https://www.electric.ai/" target="_blank" rel="noopener"
+              >Electric</a
+            >, where we use Javascript, React, Redux, Rust, and Electron. For
+            personal projects, I like to make creative tools or little programs
+            to make my life easier.
+          </p>
+          <ul>
+            <li>
+              <details>
+                <summary>PhotoCrab</summary>
+                <div class="project-detail">
+                  <div class="flex">
+                    <img src="images/photocrab-icon.png" />
+                    <div>
+                      <p class="project-text">
+                        PhotoCrab is a desktop image-editing app built with
+                        Rust, Javascript, and the
+                        <a
+                          href="https://tauri.app/"
+                          target="_blank"
+                          rel="noopener"
+                          >Tauri</a
+                        >
+                        toolkit. It provides a UI for a few functions from the
+                        <a
+                          href="https://docs.rs/image/latest/image/"
+                          target="_blank"
+                          rel="noopener"
+                          >Image</a
+                        >
+                        and
+                        <a
+                          href="https://docs.rs/ico/latest/ico/"
+                          target="_blank"
+                          rel="noopener"
+                          >Ico</a
+                        >
+                        crates.
+                      </p>
+                      <div class="project-links">
+                        <a
+                          class="project-link screenshot-link"
+                          data-name="crab"
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1.2em"
+                            viewBox="0 0 512 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"
+                            />
+                          </svg>
+                          Screenshots</a
+                        >
+                        <a class="project-link" href="#">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                            />
+                          </svg>
+                          Github</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Single Board Computing</summary>
+                <div class="project-detail">
+                  <div class="flex">
+                    <img src="images/feather.png" />
+                    <div>
+                      <p class="project-text">
+                        This is a collection of small programs that run on
+                        Raspberry Pi or Adafruit Feather boards. They include a
+                        meeting announcer, a wakeup light, and a string of
+                        colored lights.
+                      </p>
+                      <div class="project-links">
+                        <a
+                          class="project-link screenshot-link"
+                          data-name="board"
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1.2em"
+                            viewBox="0 0 512 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"
+                            />
+                          </svg>
+                          Screenshots</a
+                        >
+                        <a
+                          class="project-link"
+                          target="_blank"
+                          rel="noopener"
+                          href="https://github.com/chrissygonzalez/single-board-computing"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                            />
+                          </svg>
+                          Github</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+        <div class="work-type">
+          <h3>Design</h3>
+          <p>
+            Previously, I was a visual, UX, and product designer in software
+            companies for 10ish years before switching to engineering. Although
+            I was responsible for the usual pixel-perfect mocks, my favorite
+            part of the process was thinking through problems with my team and
+            proposing and evaluating potential solutions.
+          </p>
+          <ul>
+            <li>
+              <details>
+                <summary>MongoDB</summary>
+                <div class="project-detail">
+                  <div class="flex">
+                    <img src="images/migrator-thumb.png" />
+                    <div>
+                      <p class="project-text">
+                        At MongoDB, I worked on tools for the highly technical
+                        product support team, as well as Atlas (a fully-managed
+                        cloud database) and the first, experimental version of
+                        Atlas Data Lake (an &#8220;analytic-optimized object
+                        storage service for extracted data&#8221;).
+                      </p>
+                      <div class="project-links">
+                        <a
+                          class="project-link screenshot-link"
+                          data-name="mongo"
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1.2em"
+                            viewBox="0 0 512 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"
+                            />
+                          </svg>
+                          Screenshots</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Etsy</summary>
+                <div class="project-detail">
+                  <div class="flex">
+                    <img src="images/etsy_vetting-final-07_1x.png" />
+                    <div>
+                      <p class="project-text">
+                        At Etsy, I worked on internal tools, including one for
+                        A/B testing marketing emails, and another for reviewing
+                        and finding previously reviewed shops in an easier and
+                        more efficient manner.
+                      </p>
+                      <div class="project-links">
+                        <a
+                          class="project-link screenshot-link"
+                          data-name="etsy"
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1.2em"
+                            viewBox="0 0 512 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"
+                            />
+                          </svg>
+                          Screenshots</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Google</summary>
+                <div class="project-detail">
+                  <div class="flex">
+                    <img src="images/account-thumb.png" />
+                    <div>
+                      <p class="project-text">
+                        At Google, I was a contractor on the Identity team,
+                        where I worked on the account sign up and sign in flows,
+                        and on tools that let you manage your identity across
+                        Google products.
+                      </p>
+                      <div class="project-links">
+                        <a
+                          class="project-link screenshot-link"
+                          data-name="google"
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1.2em"
+                            viewBox="0 0 512 512"
+                            height="1.2em"
+                            class="svg"
+                          >
+                            <path
+                              d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"
+                            />
+                          </svg>
+                          Screenshots</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="links">
+        <h3>Links</h3>
+        <div class="links-content">
+          <div class="single-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 496 512"
+              height="1.2em"
+              class="svg"
+            >
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              />
+            </svg>
+            <a
+              href="https://github.com/chrissygonzalez"
+              target="_blank"
+              rel="noopener"
+              >Github</a
+            >
+          </div>
+          <div class="single-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.2em"
+              viewBox="0 0 448 512"
+              class="svg"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              />
+            </svg>
+            <a
+              href="https://www.linkedin.com/in/chrissygonzalez/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="single-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.2em"
+              viewBox="0 0 512 512"
+              class="svg"
+            >
+              <path
+                d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56H192v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V448 368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H192v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H320v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V432 368z"
+              />
+            </svg>
+            <a href="" target="_blank" rel="noopener">Resume</a>
+          </div>
+        </div>
+      </section>
+      <button class="edit-button hide-edit">&rarr;</button>
+    </main>
   </body>
-  <script src="behavior2.js"></script>
+  <script src="script.js"></script>
 </html>

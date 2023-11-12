@@ -94,6 +94,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1200px;
   position: relative;
   left: 0;
   transition: all 0.25s ease-out;
@@ -107,8 +108,12 @@ hgroup {
 }
 
 dialog {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
+}
+
+dialog h2 {
+  color: #000;
 }
 
 figcaption {
@@ -141,23 +146,12 @@ figcaption {
   border-top: 5px solid var(--main-text-color);
 }
 
-@media (max-width: 800px) {
-  .main-show-edit {
-    width: 70%;
-  }
-  .work-list {
-    flex-direction: column;
-  }
-  .work-type {
-    width: 100%;
-  }
-}
-
 .project-detail {
   margin-left: 1rem;
   margin-top: 1rem;
   background-color: var(--main-text-color);
-  padding: 1.5rem;
+  padding: 1.3rem;
+  max-width: 40rem;
 }
 
 .project-text {
@@ -168,19 +162,64 @@ figcaption {
   font-weight: 400;
 }
 
+.project-text a {
+  color: var(--main-bg-color);
+}
+
+.project-text a:hover {
+  background-color: color-mix(in srgb, var(--main-bg-color) 20%, transparent);
+  transition: all 0.25s ease-out;
+}
+
 .project-links {
   font-size: 0.9rem;
   margin-top: 1rem;
   margin-left: 1rem;
   font-weight: 400;
+  display: flex;
 }
 
 a.project-link {
   color: var(--main-bg-color);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+a.project-link:hover {
+  background-color: color-mix(in srgb, var(--main-bg-color) 20%, transparent);
+  transition: all 0.25s ease-out;
+}
+
+.project-link svg {
+  fill: var(--main-bg-color);
+  margin-right: 0.3rem;
+}
+
+@media (max-width: 1000px) {
+  .main-show-edit {
+    width: 70%;
+  }
+  .work-list {
+    flex-direction: column;
+  }
+  .work-type {
+    width: 100%;
+  }
+  .project-text {
+    margin-left: 1.5rem;
+  }
 }
 
 .flex {
   display: flex;
+  align-items: flex-start;
+}
+
+.flex img {
+  width: 7rem;
 }
 
 /* EDIT BUTTON STYLES */

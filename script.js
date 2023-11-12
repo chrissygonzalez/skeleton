@@ -33,6 +33,8 @@ const backgroundItems = [body, main, editButton];
 const headlines = [headers];
 const subheads = [codeHeading, designHeading, linksHeading];
 const [dialog] = document.getElementsByTagName("dialog");
+const testScreens = document.getElementsByClassName("screenshot-link"); //rename
+const [dialogHead] = document.getElementsByClassName("dialog-head");
 
 // draw the little theme things
 [...document.getElementsByClassName("color-theme-left")].forEach(
@@ -44,11 +46,12 @@ const [dialog] = document.getElementsByTagName("dialog");
     elem.style.setProperty("background-color", foregrounds[index])
 );
 
-// color, font, and edit state
+// color, font, edit, and modal content state
 const pageState = {
   showEdit: false,
   foregroundColor: lime,
   backgroundColor: blue,
+  dialogImages: [],
 };
 
 const setFavicon = () => {
@@ -148,6 +151,33 @@ const changeFont = (style) => {
   });
 };
 
+// functions to do things with modal content
+function setModalContent() {
+  switch (this.dataset.name) {
+    case "crab": {
+      dialogHead.innerHTML = "PhotoCrab";
+      break;
+    }
+    case "board": {
+      dialogHead.innerHTML = "Single Board Computing";
+      break;
+    }
+    case "mongo": {
+      dialogHead.innerHTML = "MongoDB";
+      break;
+    }
+    case "etsy": {
+      dialogHead.innerHTML = "Etsy";
+      break;
+    }
+    case "google": {
+      dialogHead.innerHTML = "Google";
+      break;
+    }
+  }
+  dialog.showModal();
+}
+
 // register event listeners
 editButton.addEventListener("click", () => {
   toggleEditing();
@@ -173,6 +203,9 @@ backgroundPicker.addEventListener("input", pickBackground);
 
 editButton.classList.remove("hide-edit");
 changeColors();
-// dialog.showModal();
 setFavicon();
+
+[...testScreens].forEach((link) =>
+  link.addEventListener("click", setModalContent)
+);
 closeButton.addEventListener("click", () => dialog.close());
